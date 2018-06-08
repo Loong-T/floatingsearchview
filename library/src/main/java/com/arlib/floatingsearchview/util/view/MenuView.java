@@ -129,8 +129,6 @@ public class MenuView extends LinearLayout {
     /**
      * Set the callback that will be called when menu
      * items a selected.
-     *
-     * @param menuCallback
      */
     public void setMenuCallback(MenuBuilder.Callback menuCallback) {
         this.mMenuCallback = menuCallback;
@@ -139,7 +137,7 @@ public class MenuView extends LinearLayout {
     /**
      * Resets the the view to fit into a new
      * available width.
-     * <p/>
+     * <br>
      * <p>This clears and then re-inflates the menu items
      * , removes all of its associated action views, and re-creates
      * the menu and action items to fit in the new width.</p>

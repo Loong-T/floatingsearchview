@@ -2,13 +2,13 @@ package com.arlib.floatingsearchview;
 
 /*
  * Copyright (C) 2015 Ari C.
- * <p/>
+ * <br>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * <p/>
+ * <br>
  * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
+ * <br>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -252,7 +252,7 @@ public class FloatingSearchView extends FrameLayout {
         /**
          * Called when the current search has completed
          * as a result of pressing search key in the keyboard.
-         * <p/>
+         * <br>
          * Note: This will only get called if
          * {@link FloatingSearchView#setShowSearchKey(boolean)}} is set to true.
          *
@@ -265,7 +265,7 @@ public class FloatingSearchView extends FrameLayout {
      * Interface for implementing a callback to be
      * invoked when the left menu (navigation menu) is
      * clicked.
-     * <p/>
+     * <br>
      * Note: This is only relevant when leftActionMode is
      * set to {@value #LEFT_ACTION_MODE_SHOW_HAMBURGER}
      */
@@ -288,7 +288,7 @@ public class FloatingSearchView extends FrameLayout {
      * Interface for implementing a callback to be
      * invoked when the home action button (the back arrow)
      * is clicked.
-     * <p/>
+     * <br>
      * Note: This is only relevant when leftActionMode is
      * set to {@value #LEFT_ACTION_MODE_SHOW_HOME}
      */
@@ -969,10 +969,10 @@ public class FloatingSearchView extends FrameLayout {
     }
 
     /**
-     * <p/>
+     * <br>
      * Enables clients to directly manipulate
      * the menu icon's progress.
-     * <p/>
+     * <br>
      * Useful for custom animation/behaviors.
      *
      * @param progress the desired progress of the menu
@@ -1034,7 +1034,7 @@ public class FloatingSearchView extends FrameLayout {
     /**
      * Shows a circular progress on top of the
      * menu action button.
-     * <p/>
+     * <br>
      * Call hidProgress()
      * to change back to normal and make the menu
      * action visible.
@@ -1189,7 +1189,7 @@ public class FloatingSearchView extends FrameLayout {
 
     /**
      * Sets the title for the search bar.
-     * <p/>
+     * <br>
      * Note that after the title is set, when
      * the search gains focus, the title will be replaced
      * by the search hint.
@@ -1205,7 +1205,7 @@ public class FloatingSearchView extends FrameLayout {
 
     /**
      * Sets the search text.
-     * <p/>
+     * <br>
      * Note that this is the different from
      * {@link #setSearchBarTitle(CharSequence title) setSearchBarTitle} in
      * that it keeps the text when the search gains focus.
@@ -1674,7 +1674,7 @@ public class FloatingSearchView extends FrameLayout {
      * Sets the listener that will be called when
      * an action that completes the current search
      * session has occurred and the search lost focus.
-     * <p/>
+     * <br>
      * <p>When called, a client would ideally grab the
      * search or suggestion query from the callback parameter or
      * from {@link #getQuery() getquery} and perform the necessary
@@ -1699,7 +1699,7 @@ public class FloatingSearchView extends FrameLayout {
     /**
      * Sets the listener that will be called when the
      * left/start menu (or navigation menu) is clicked.
-     * <p/>
+     * <br>
      * <p>Note that this is different from the overflow menu
      * that has a separate listener.</p>
      *
