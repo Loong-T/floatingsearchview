@@ -1,6 +1,6 @@
 package com.arlib.floatingsearchview;
 
-/**
+/*
  * Copyright (C) 2015 Ari C.
  * <p/>
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -77,7 +77,6 @@ import com.bartoszlipinski.viewpropertyobjectanimator.ViewPropertyObjectAnimator
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -979,13 +978,18 @@ public class FloatingSearchView extends FrameLayout {
      * @param progress the desired progress of the menu
      *                 icon's rotation: 0.0 == hamburger
      *                 shape, 1.0 == back arrow shape
+     *
+     * @param invokeCallback if true, this method will call OnLeftMenuClickListener
      */
-    public void setMenuIconProgress(float progress) {
+    public void setMenuIconProgress(float progress, boolean invokeCallback) {
         mMenuBtnDrawable.setProgress(progress);
-        if (progress == 0) {
-            closeMenu(false);
-        } else if (progress == 1.0) {
-            openMenu(false);
+
+        if (invokeCallback) {
+            if (progress == 0) {
+                closeMenu(false);
+            } else if (progress == 1.0) {
+                openMenu(false);
+            }
         }
     }
 
@@ -1702,7 +1706,7 @@ public class FloatingSearchView extends FrameLayout {
      * @param listener
      */
     public void setOnLeftMenuClickListener(OnLeftMenuClickListener listener) {
-        this.mOnMenuClickListener = listener;
+        mOnMenuClickListener = listener;
     }
 
     /**
@@ -2028,7 +2032,7 @@ public class FloatingSearchView extends FrameLayout {
     private class DrawerListener implements DrawerLayout.DrawerListener {
         @Override
         public void onDrawerSlide(View drawerView, float slideOffset) {
-            setMenuIconProgress(slideOffset);
+            setMenuIconProgress(slideOffset, false);
         }
 
         @Override
@@ -2049,7 +2053,7 @@ public class FloatingSearchView extends FrameLayout {
 
     private class NavDrawerLeftMenuClickListener implements OnLeftMenuClickListener {
 
-        DrawerLayout mDrawerLayout;
+        private DrawerLayout mDrawerLayout;
 
         public NavDrawerLeftMenuClickListener(DrawerLayout drawerLayout) {
             mDrawerLayout = drawerLayout;

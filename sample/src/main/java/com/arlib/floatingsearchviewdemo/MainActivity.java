@@ -35,8 +35,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
         implements BaseExampleFragment.BaseExampleFragmentCallbacks, NavigationView.OnNavigationItemSelectedListener {
 
-    private final String TAG = "MainActivity";
-
     private DrawerLayout mDrawerLayout;
 
     @Override
@@ -44,8 +42,8 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         showFragment(new SlidingSearchResultsExampleFragment());
