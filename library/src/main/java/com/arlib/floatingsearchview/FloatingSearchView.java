@@ -1852,7 +1852,7 @@ public class FloatingSearchView extends FrameLayout {
         mMenuId = savedState.menuId;
         mOldQuery = savedState.query;
         setSearchText(mOldQuery);
-        mSuggestionSectionAnimDuration = savedState.suggestionsSectionAnimSuration;
+        mSuggestionSectionAnimDuration = savedState.suggestionsSectionAnimDuration;
         setSuggestionItemTextSize(savedState.suggestionTextSize);
         setDismissOnOutsideClick(savedState.dismissOnOutsideClick);
         setShowMoveUpSuggestion(savedState.showMoveSuggestionUpBtn);
@@ -1927,7 +1927,7 @@ public class FloatingSearchView extends FrameLayout {
         private int menuId;
         private int leftActionMode;
         private boolean dimBackground;
-        private long suggestionsSectionAnimSuration;
+        private long suggestionsSectionAnimDuration;
         private boolean dismissOnSoftKeyboardDismiss;
         private boolean dismissFocusOnSuggestionItemClick;
 
@@ -1960,7 +1960,7 @@ public class FloatingSearchView extends FrameLayout {
             menuId = in.readInt();
             leftActionMode = in.readInt();
             dimBackground = (in.readInt() != 0);
-            suggestionsSectionAnimSuration = in.readLong();
+            suggestionsSectionAnimDuration = in.readLong();
             dismissOnSoftKeyboardDismiss = (in.readInt() != 0);
             dismissFocusOnSuggestionItemClick = (in.readInt() != 0);
         }
@@ -1991,7 +1991,7 @@ public class FloatingSearchView extends FrameLayout {
             out.writeInt(menuId);
             out.writeInt(leftActionMode);
             out.writeInt(dimBackground ? 1 : 0);
-            out.writeLong(suggestionsSectionAnimSuration);
+            out.writeLong(suggestionsSectionAnimDuration);
             out.writeInt(dismissOnSoftKeyboardDismiss ? 1 : 0);
             out.writeInt(dismissFocusOnSuggestionItemClick ? 1 : 0);
         }
