@@ -56,8 +56,8 @@ public class SlidingSearchResultsExampleFragment extends BaseExampleFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mSearchView = (FloatingSearchView) view.findViewById(R.id.floating_search_view);
-        mSearchResultsList = (RecyclerView) view.findViewById(R.id.search_results_list);
+        mSearchView = view.findViewById(R.id.floating_search_view);
+        mSearchResultsList = view.findViewById(R.id.search_results_list);
 
         setupFloatingSearch();
         setupResultsList();
@@ -233,7 +233,7 @@ public class SlidingSearchResultsExampleFragment extends BaseExampleFragment {
                     leftIcon.setImageDrawable(null);
                 }
 
-                textView.setTextColor(Color.parseColor(textColor));
+//                textView.setTextColor(Color.parseColor(textColor));
                 String text = colorSuggestion.getBody()
                         .replaceFirst(mSearchView.getQuery(),
                                 "<font color=\"" + textLight + "\">" + mSearchView.getQuery() + "</font>");
@@ -278,10 +278,7 @@ public class SlidingSearchResultsExampleFragment extends BaseExampleFragment {
         //to close, then we don't want to close the activity. if mSearchView.setSearchFocused(false)
         //returns false, we know that the search was already closed so the call didn't change the focus
         //state and it makes sense to call supper onBackPressed() and close the activity
-        if (!mSearchView.setSearchFocused(false)) {
-            return false;
-        }
-        return true;
+        return mSearchView.setSearchFocused(false);
     }
 
     private void setupDrawer() {

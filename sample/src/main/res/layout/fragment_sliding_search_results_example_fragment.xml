@@ -38,6 +38,9 @@
             app:floatingSearch_showSearchKey="true"
             app:floatingSearch_suggestionsListAnimDuration="250"
             app:floatingSearch_dimBackground="false"
+            app:floatingSearch_showMoveSuggestionUp="true"
+            app:floatingSearch_viewSuggestionItemTextColor="#1b89e2"
+            app:floatingSearch_suggestionRightIconColor="#ffffff"
             app:floatingSearch_close_search_on_keyboard_dismiss="false"/>
     </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

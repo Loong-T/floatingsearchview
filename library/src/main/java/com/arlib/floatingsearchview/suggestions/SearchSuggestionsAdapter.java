@@ -37,8 +37,6 @@ import java.util.List;
 
 public class SearchSuggestionsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private static final String TAG = "SearchSuggestionsAdapter";
-
     private List<? extends SearchSuggestion> mSearchSuggestions = new ArrayList<>();
 
     private Listener mListener;
@@ -48,8 +46,8 @@ public class SearchSuggestionsAdapter extends RecyclerView.Adapter<RecyclerView.
     private Drawable mRightIconDrawable;
     private boolean mShowRightMoveUpBtn = false;
     private int mBodyTextSizePx;
-    private int mTextColor = -1;
-    private int mRightIconColor = -1;
+    private int mTextColor = Integer.MAX_VALUE;
+    private int mRightIconColor = Integer.MAX_VALUE;
 
     public interface OnBindSuggestionCallback {
 
@@ -85,9 +83,9 @@ public class SearchSuggestionsAdapter extends RecyclerView.Adapter<RecyclerView.
             super(v);
 
             mListener = listener;
-            body = (TextView) v.findViewById(R.id.body);
-            leftIcon = (ImageView) v.findViewById(R.id.left_icon);
-            rightIcon = (ImageView) v.findViewById(R.id.right_icon);
+            body = v.findViewById(R.id.body);
+            leftIcon = v.findViewById(R.id.left_icon);
+            rightIcon = v.findViewById(R.id.right_icon);
 
             rightIcon.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -184,11 +182,11 @@ public class SearchSuggestionsAdapter extends RecyclerView.Adapter<RecyclerView.
         SearchSuggestion suggestionItem = mSearchSuggestions.get(position);
         viewHolder.body.setText(suggestionItem.getBody());
 
-        if(mTextColor != -1){
+        if(mTextColor != Integer.MAX_VALUE){
             viewHolder.body.setTextColor(mTextColor);
         }
 
-        if(mRightIconColor != -1){
+        if(mRightIconColor != Integer.MAX_VALUE){
             Util.setIconColor(viewHolder.rightIcon, mRightIconColor);
         }
 
