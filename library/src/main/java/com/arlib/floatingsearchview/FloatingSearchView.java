@@ -47,7 +47,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -679,9 +678,9 @@ public class FloatingSearchView extends FrameLayout {
                 } else {
                     switch (mLeftActionMode) {
                         case LEFT_ACTION_MODE_SHOW_HAMBURGER:
-                            if(mLeftMenuClickListener != null){
+                            if (mLeftMenuClickListener != null) {
                                 mLeftMenuClickListener.onClick(mLeftAction);
-                            }else {
+                            } else {
                                 toggleLeftMenu();
                             }
                             break;
@@ -778,7 +777,7 @@ public class FloatingSearchView extends FrameLayout {
      *
      * @return
      */
-    public List<MenuItemImpl> getCurrentMenuItems(){
+    public List<MenuItemImpl> getCurrentMenuItems() {
         return mMenuView.getCurrentMenuItems();
     }
 
@@ -974,10 +973,9 @@ public class FloatingSearchView extends FrameLayout {
      * <br>
      * Useful for custom animation/behaviors.
      *
-     * @param progress the desired progress of the menu
-     *                 icon's rotation: 0.0 == hamburger
-     *                 shape, 1.0 == back arrow shape
-     *
+     * @param progress       the desired progress of the menu
+     *                       icon's rotation: 0.0 == hamburger
+     *                       shape, 1.0 == back arrow shape
      * @param invokeCallback if true, this method will call OnLeftMenuClickListener
      */
     public void setMenuIconProgress(float progress, boolean invokeCallback) {
@@ -2036,12 +2034,12 @@ public class FloatingSearchView extends FrameLayout {
 
         @Override
         public void onDrawerOpened(View drawerView) {
-
+            mMenuOpen = true;
         }
 
         @Override
         public void onDrawerClosed(View drawerView) {
-
+            mMenuOpen = false;
         }
 
         @Override
