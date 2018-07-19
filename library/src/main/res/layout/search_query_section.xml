@@ -90,6 +90,6 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/search_bar_right_icon_right_margin"
             android:layout_marginRight="@dimen/search_bar_right_icon_right_margin"
-            android:orientation="horizontal"/>
+            android:orientation="horizontal" />
     </RelativeLayout>
 </android.support.v7.widget.CardView>
