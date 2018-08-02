@@ -7,6 +7,6 @@
     android:layout_height="@dimen/square_button_size"
     android:padding="@dimen/square_button_padding"
     android:clickable="true"
-    android:background="@drawable/oval_btn_selector"
+    android:background="?attr/selectableItemBackgroundBorderless"
     android:src="@drawable/ic_history_black_24dp"
     xmlns:android="http://schemas.android.com/apk/res/android"/>

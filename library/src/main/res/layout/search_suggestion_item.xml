@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/selectableItemBackgroundBorderless"
+    android:background="?attr/selectableItemBackground"
     android:orientation="horizontal">
 
     <ImageView
@@ -39,7 +39,7 @@
         android:layout_gravity="center"
         android:layout_marginEnd="@dimen/search_bar_right_icon_right_margin"
         android:alpha="1"
-        android:background="@drawable/oval_btn_selector"
+        android:background="?attr/selectableItemBackground"
         android:padding="@dimen/square_button_padding"
         android:rotation="45"
         android:src="@drawable/ic_arrow_back_black_24dp"
