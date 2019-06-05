@@ -1258,7 +1258,7 @@ public class FloatingSearchView extends FrameLayout {
     private void setupSuggestionSection() {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(),
-                LinearLayoutManager.VERTICAL, true);
+                RecyclerView.VERTICAL, true);
         mSuggestionsList.setLayoutManager(layoutManager);
         mSuggestionsList.setItemAnimator(null);
 
@@ -1645,6 +1645,13 @@ public class FloatingSearchView extends FrameLayout {
                 }
                 break;
         }
+    }
+
+    /**
+     * @return the query section to input query
+     */
+    public View getQuerySection() {
+        return mQuerySection;
     }
 
     /**
